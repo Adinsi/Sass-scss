@@ -1,0 +1,273 @@
+@import 'responsive.scss';
+
+*{
+    box-sizing: border-box;
+  padding: 0; 
+  margin: 0;
+}
+
+%transform{
+    text-transform: uppercase;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background-image: url('./images/fond1.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* Responsive pour notre header sur une tablete*/
+
+    @media #{$media}{
+        background-image: url('./images/fond2.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+    }
+
+    /* le nav qui contient le logo et le lien inclut dans notre header */
+
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+    /* la classe logo avec ses enfants*/
+    .logo{
+        position: relative;
+        top: 0;
+        left: 0;
+
+        .harmonie{
+ font-size: 1.8rem;
+ color: rgb(235, 156, 11);
+ font-weight: 900;
+        }
+
+     .texte{
+         width: 200px;
+    position: absolute;
+    top: 40px;
+    left: 10px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+     }   
+       
+    }
+    /* fin du logo*/
+
+    /* debut link*/
+
+    .link{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        font-size: 1.8rem;
+       
+
+          @media #{$media} {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: center;
+             transition: 2s ease;
+             transform: translateY(-500px);
+             z-index: 20;
+             background-color: darken($color: #635454, $amount: 20);
+            
+               
+        }
+      
+        a{
+            @extend %transform;
+            text-decoration: none;
+            color: white;
+             margin-right: 20px;
+             margin-top: 20px;
+             
+&:hover{
+    color: orange;
+    border-bottom: solid 1px black;
+}
+        }
+    }
+
+    /* fin link*/
+
+    /* menu burger*/
+.burger{
+    
+
+    .ouvert{
+        display: none;
+
+        cursor: pointer;
+        
+      
+
+    }
+    .fermer{
+        display: none;
+
+        cursor: pointer;
+
+        
+    }
+
+      @media #{$media} {
+    display: flex;
+        color: white;
+        background-color: transparent;
+        
+        .fermer{
+
+            
+    
+            font-size: 2rem;
+            display:flex;
+
+            
+        }
+        .ouvert{
+font-size: 2rem;
+            background: transparent;
+            display: flex;
+        }
+
+
+        
+      
+    }
+    
+    
+}
+.search{
+    span{
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        background-color: rgb(247, 161, 0);
+        border-radius: 50px;
+        cursor: pointer;
+    }
+
+}
+
+    /* fin du menu burger*/
+}
+
+
+/* fin du nav */
+    
+/* Debut banniere*/
+.banner{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 10rem;
+
+    @media #{$media}{
+        top: -5rem;
+    }
+   
+
+    
+    
+    h2{
+        font-size: 3rem;
+        color: rgba(242, 217, 217, 0.848);
+    }
+    h1{
+        @extend %transform;
+        font-size: 3.5rem;
+        
+        color: white;
+        font-weight: 900;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        
+    }
+    h3{
+        @extend %transform;
+        font-size: 2.5rem;
+        color: rgb(242, 219, 219);
+        position: relative;
+        bottom:-20px ;
+    }
+}
+/*fin banniere*/
+
+/* les buttons*/
+.buttons{
+   text-align: center;
+    button{
+        @extend %transform;
+        position: relative;
+        top: 80px;
+        padding: 15px;
+        border-radius: 20px;
+        margin-right: 15px;
+        color: white;
+        background-color: transparentize($color: #503f3f, $amount: 0.8);
+        font-weight: bolder;
+        border: rgb(237, 237, 21) solid 1px;
+
+        &:hover{
+            background-color: orange;
+            border: none;
+        }
+    }
+}
+/* fin buttons*/
+/*
+mes sliders*/
+
+.slider{
+    position: absolute;
+    text-align: center;
+    bottom: 40px;
+    left: 40%;
+    color: white;
+    font-size: 1.5rem;
+    
+    span{
+        
+        letter-spacing: 10px;
+        padding: 15px;
+        border-bottom: 3px solid wheat;
+        cursor: pointer;
+        &:hover{
+            font-size: 2rem;
+            border-bottom: 3px
+            
+            solid rgb(240, 240, 9);
+        }
+    }
+    
+}
+/*
+
+ fin des sliders*/
+}
+
+
+
+
+
+
+
+
+
+
+
+    
+    
